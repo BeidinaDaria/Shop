@@ -67,6 +67,21 @@ if(isset($_GET['erase'])){
         $ps->execute($_GET['id']);
     }
 }
+if(isset($_GET['include'])){
+    $id=$_GET['id'];
+    //create the item object by id
+    $item=Item::fromDb($id);
+    //increase the total cost
+    $total+=$item->pricesale;
+    $item->Sale();
+}
+else{
+    $id=$_GET['id'];
+    //create the item object by id
+    $item=Item::fromDb($id);
+    //increase the total cost
+    $total-=$item->pricesale*$_GET['amount'];
+}
 ?>
 <script>
     //deleting cookie with javascript
