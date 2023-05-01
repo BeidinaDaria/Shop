@@ -257,6 +257,7 @@ class Item
             <input type='number' name='amount' method='GET' min='0'>
         </div>";
         echo "<input type='button' method='GET' class='btn btn-sm btn-danger' style='margin-left:10px;' value='Remove' name='erase' id=".$this->id." onclick=eraseCookie('".$ruser."','".$this->id."')>";
+        echo "<label for='include'>include</label><input method='GET' type='checkbox' value='include' name='include' id=".$this->id.">";
         echo "</div>";
     }
     function Sale()
